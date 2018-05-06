@@ -20,9 +20,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from ls990 device
 $(call inherit-product, device/lge/ls990/device.mk)
 
+# Inherit some common LiquidRemix stuff.
+$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := ls990
-PRODUCT_NAME := full_ls990
+PRODUCT_NAME := liquid_ls990
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-ls990
 PRODUCT_MANUFACTURER := LGE
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT="lge/g3_spr_us/g3:4.4.2/KVT49L.LS990ZV4/LS990ZV4.1403169216:user/release-keys" \
+    PRIVATE_BUILD_DESC="g3_spr_us-user 4.4.2 KVT49L.LS990ZV4 LS990ZV4.1403169216 release-keys"
